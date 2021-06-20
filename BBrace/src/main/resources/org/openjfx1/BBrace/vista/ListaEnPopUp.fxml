@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="borderPane" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <rowConstraints>
+      <RowConstraints percentHeight="3.0" />
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints percentHeight="8.0" />
+      <RowConstraints percentHeight="66.0" />
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints percentHeight="3.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="10.0" />
+      <ColumnConstraints percentWidth="80.0" />
+      <ColumnConstraints percentWidth="10.0" />
+   </columnConstraints>
+   <children>
+      <HBox fx:id="hboxSup" prefHeight="100.0" prefWidth="200.0" styleClass="paneles-pequenios-superior-e-inferior" GridPane.columnSpan="2147483647" />
+      <HBox fx:id="hboxInf" prefHeight="100.0" prefWidth="200.0" styleClass="paneles-pequenios-superior-e-inferior" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+      <JFXListView fx:id="listView" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="labelTitulo" styleClass="texto-secundario" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+      <Label fx:id="labelAviso" styleClass="text-labels-alerta" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

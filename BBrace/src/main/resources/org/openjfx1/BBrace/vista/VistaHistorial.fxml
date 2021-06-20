@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="gridPaneHistorial" prefHeight="428.0" prefWidth="530.0" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="hboxDias" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2">
+         <children>
+            <Label fx:id="labelDatos" styleClass="texto-secundario" text="Datos: " />
+            <JFXComboBox fx:id="comboBoxDias" onAction="#seleccionarDias" />
+         </children>
+      </HBox>
+      <HBox fx:id="hboxNombre" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.columnSpan="3">
+         <children>
+            <Label fx:id="labelHistorial" alignment="CENTER" contentDisplay="BOTTOM" style="-fx-font-weight: bold;" styleClass="texto-secundario" text="Historial: " />
+            <Label fx:id="labelNombreBebe" alignment="CENTER" styleClass="texto-secundario" text="Nombre del bebé">
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding></Label>
+         </children>
+      </HBox>
+   </children>
+   <rowConstraints>
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints percentHeight="90.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="5.0" />
+      <ColumnConstraints percentWidth="28.0" />
+      <ColumnConstraints percentWidth="3.0" />
+      <ColumnConstraints percentWidth="28.0" />
+      <ColumnConstraints percentWidth="3.0" />
+      <ColumnConstraints percentWidth="28.0" />
+      <ColumnConstraints percentWidth="5.0" />
+   </columnConstraints>
+</GridPane>

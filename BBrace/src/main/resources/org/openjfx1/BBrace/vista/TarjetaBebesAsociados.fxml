@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="gridPane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <rowConstraints>
+      <RowConstraints percentHeight="60.0" />
+      <RowConstraints percentHeight="40.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="5.0" />
+      <ColumnConstraints percentWidth="20.0" />
+      <ColumnConstraints percentWidth="40.0" />
+      <ColumnConstraints percentWidth="30.0" />
+      <ColumnConstraints percentWidth="5.0" />
+   </columnConstraints>
+   <children>
+      <Label fx:id="labelNombreBebe" styleClass="texto-primario" text="NombreBebe" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+      <Label fx:id="labelPadre" styleClass="texto-secundario" text="Padre:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label fx:id="labelDniPadre" styleClass="texto-secundario" text="DniPadre" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label fx:id="labelNombrePadre" styleClass="texto-secundario" text="nombrePadre" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

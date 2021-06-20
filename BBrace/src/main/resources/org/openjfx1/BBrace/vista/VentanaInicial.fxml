@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPaneParent" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox fx:id="menuHSuperior" prefHeight="45.0" styleClass="panel-superior" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <HBox fx:id="menuHInferior" alignment="CENTER" prefHeight="40.0" styleClass="panel-inferior" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <JFXButton fx:id="botonPolitica" onAction="#descargaPolitica" styleClass="botones-paneles-superior-e-inferior" text="Política de privacidad">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="botonTerminos" onAction="#descargaTerminos" styleClass="botones-paneles-superior-e-inferior" text="Términos y condiciones">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="stackPane" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="panelBebe" />
+            <GridPane fx:id="gridPane">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints percentHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="35.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox fx:id="vbox" alignment="CENTER" spacing="7.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="imageViewLogo" fitHeight="100.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+                           <image>
+                              <Image url="@bbrace.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ImageView>
+                        <JFXButton fx:id="botonInicioAplicacion" alignment="CENTER" contentDisplay="CENTER" onAction="#inicioAplicacion" prefHeight="31.0" prefWidth="150.0" styleClass="botones-secundarios-rellenos" text="Acceder" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridPane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="3.0" />
+    <ColumnConstraints hgrow="SOMETIMES" percentWidth="14.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="3.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints percentHeight="60.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="40.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="nombreLabel" styleClass="texto-secundario" text="Nombre" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dniLabel" style="-fx-font-size: 14;" styleClass="texto-secundario" text="Dni" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTipo" style="-fx-font-size: 14;" styleClass="texto-secundario" text="Tipo" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+      <Label fx:id="label" style="-fx-font-size: 14;" styleClass="texto-secundario" text="DNI: " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+   </children>
+</GridPane>

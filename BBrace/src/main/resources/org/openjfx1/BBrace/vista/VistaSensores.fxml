@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="stackPanePadre" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane fx:id="gridVisualizarSensores" alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" percentHeight="70.0" valignment="CENTER" />
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox fx:id="vBoxTemp" alignment="BOTTOM_CENTER" GridPane.valignment="BOTTOM">
+               <children>
+                  <Label fx:id="labelTituloTemp" styleClass="titulo-graficas" text="Temperatura" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox fx:id="vBoxPul" alignment="BOTTOM_CENTER" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <children>
+                  <Label fx:id="labelTituloPul" alignment="CENTER" styleClass="titulo-graficas" text="Pulso">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </VBox>
+            <VBox fx:id="vBoxOxg" alignment="BOTTOM_CENTER" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+               <children>
+                  <Label fx:id="labelTituloOxg" styleClass="titulo-graficas" text="Oxígeno en sangre" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </VBox>
+            <GridPane GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints percentHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints percentHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXButton fx:id="botonHistorial" onAction="#irAHistorial" styleClass="botones-discretos-tipo-label" text="Historial completo" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </JFXButton>
+                  <HBox fx:id="hBoxSeleccionar" alignment="BOTTOM_LEFT" spacing="3.0" GridPane.columnSpan="2" GridPane.valignment="BOTTOM">
+                     <children>
+                        <Label fx:id="labelSeleccionarBebe" alignment="BOTTOM_LEFT" styleClass="text-labels" text="Seleccione el bebé:">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <JFXComboBox fx:id="comboBoxSeleccionarBebe" onAction="#seleccionarBebe" prefWidth="100.0" styleClass="combo-box" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="40.0" right="5.0" />
+                     </GridPane.margin>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Label fx:id="labelAviso" styleClass="text-labels-alerta" text="Datos no encontrados." visible="false" wrapText="true" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Label>
+            <HBox fx:id="hBoxBotones" alignment="BOTTOM_CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <JFXButton fx:id="botonContacto" onAction="#contactoEmergencia" prefHeight="20.0" styleClass="botones-secundarios-rellenos" text="EMERGENCIA" />
+                  <JFXButton fx:id="botonFichaCompleta" onAction="#verFichaBebe" prefHeight="20.0" styleClass="botones-secundarios-rellenos" text="FICHA COMPLETA DE MI BEBÉ" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+      <GridPane fx:id="gridPaneHistorial" style="-fx-background-color: white;" stylesheets="@styles.css" visible="false">
+         <children>
+            <JFXButton fx:id="botonAtras" onAction="#irAtras" styleClass="botones-secundarios-rellenos" text="ATRÁS" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+         </children>
+         <rowConstraints>
+            <RowConstraints percentHeight="10.0" />
+            <RowConstraints percentHeight="77.0" />
+            <RowConstraints percentHeight="10.0" />
+            <RowConstraints percentHeight="5.0" />
+         </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints percentWidth="5.0" />
+            <ColumnConstraints percentWidth="95.0" />
+         </columnConstraints>
+      </GridPane>
+   </children>
+</StackPane>

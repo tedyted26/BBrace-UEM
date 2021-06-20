@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="myGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="80.0" />
+    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints percentHeight="3.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="9.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+    <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+    <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="3.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <JFXToggleButton id="tgEmergencia" fx:id="tgEmergencia" onAction="#botonEmergencia" text="Emergencia" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+      <JFXTextField fx:id="etAsunto" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <JFXButton fx:id="btnAtras" onAction="#atras" styleClass="botones-secundarios-rellenos" text="Atrás" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+      <JFXButton fx:id="btnEnviar" onAction="#enviarMensaje" styleClass="botones-secundarios-rellenos" text="Enviar" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+      <JFXComboBox fx:id="jcbDestinatarios" maxWidth="1.7976931348623157E308" prefWidth="417.0" styleClass="combo-box" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+      <Label fx:id="labelPara" styleClass="texto-primario" text="Para:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="labelAsunto" styleClass="texto-primario" text="Asunto:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="labelAtencion" styleClass="texto-secundario-alerta" text="Atención, el mensaje se enviará como emergencia" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+      <Label fx:id="labelTitulo" styleClass="titulo-graficas" text="Nuevo correo" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <JFXTextArea fx:id="etMensaje" promptText="Escriba su mensaje aquí." GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+      <HBox fx:id="hboxSup" prefHeight="100.0" prefWidth="200.0" styleClass="paneles-pequenios-superior-e-inferior" GridPane.columnSpan="2147483647" />
+      <HBox fx:id="hboxInf" prefHeight="100.0" prefWidth="200.0" styleClass="paneles-pequenios-superior-e-inferior" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
+      <Label fx:id="labelError" styleClass="text-labels" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

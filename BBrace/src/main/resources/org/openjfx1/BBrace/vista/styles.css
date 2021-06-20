@@ -1,0 +1,309 @@
+@font-face {
+	src: url("fonts/OpenSans-Regular.ttf");
+	/* para cambiar la fuente hay que cambiar el archivo, 
+	 * o se pueden importar varios copiando y pegando la linea con diferente archivo
+	 */
+}
+*{
+	color-claro: #FFFFFF;
+	color-principal: #9AACAC;
+	color-negro: #000000CC;
+}
+.text{ /* Para cambiar la fuente en todo el proyecto se utiliza esto */
+	-fx-font-family: "Open Sans Regular"; 
+	/* Para cambiarla a otro open sans hay que darle doble click al ttf
+	 * para ver el nombre y copiarlo en el fx-font-family
+	 */
+}
+
+/*CSS SANJO */
+.lista-titulo{
+	-fx-background-color: #9AACAC10;
+	
+}
+.texto-titulo{
+	-fx-text-fill: color-principal;
+	-fx-font-weight: 100;
+	-fx-font-size: 20px;
+}
+.texto-primario{
+	
+	-fx-font-size: 18px;
+	-fx-text-fill: color-principal;
+}
+.texto-secundario{
+	-fx-text-fill: #9AACACDD;
+	-fx-font-size: 16px;
+
+}
+.tarjeta-lista:hover, .lista-pulseras .list-cell:hover{
+	-fx-background-color: #9AACAC26;
+}
+.tarjeta-lista:focused, .lista-pulseras .list-cell:focused{
+	-fx-background-color: #9AACAC8C;
+}
+.lista:filled:selected:focused, .list-cell:filled:selected{
+    -fx-background-color: linear-gradient(#9AACAC80 0%, #9AACAC90 25%, #9AACACAA 75%, #9AACACAA 100%);
+            
+}
+.lista .list-cell:empty, .tarjeta-lista:empty, .lista-pulseras .list-cell:empty{
+	visibility: hidden;
+}
+.lista:filled:selected:focused,
+ .list-cell:filled:selected .texto-primario,
+ .list-cell:filled:selected .texto-secundario{
+      -fx-text-fill: color-claro;
+            
+}
+.prueba, .mensaje{
+	-fx-background-color: color-claro;
+	-fx-pref-height: 0px;
+	visibility: hidden;
+ 	
+}
+.lista-pulseras .list-cell{
+	-fx-background-color: white;
+}
+.lista:filled:selected:focused,
+ .list-cell:filled:selected .prueba,
+ .list-cell:filled:selected .mensaje{
+ 	-fx-pref-height: 300px;
+ 	visibility: visible;
+ 	-fx-text-fill: color-principal;
+
+ }
+.lista:filled:selected:focused,
+ .list-cell:filled:selected .tarjeta-lista{
+	-fx-pref-height: 400px;
+}
+
+#panel_pulsera{
+	-fx-background-color: transparent;
+	-fx-background-image: url("pulsera.png");
+	-fx-background-repeat: stretch;   
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+}
+#nombre_bebe_pulsera{
+	-fx-padding: 10;
+}
+#boton_secundario_pulsera{
+	-fx-font-size: 14px;
+	-fx-pref-height: 5px;
+	-fx-font-weight: 500;
+	-fx-background-radius: 7;
+	-fx-font-weight: bold;	
+}
+.texto_pulseras{
+	-fx-text-fill: color-negro;
+}
+.frecuencia_pulsera, .oxigeno_pulsera{
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
+	-fx-padding: 0 0 0 5;
+	-fx-text-fill: color-negro;
+}
+#temperatura_pulsera{
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+	-fx-padding: 2 3 0 0;
+}
+#texto_interno_pulsera{
+	-fx-font-size: 10px;
+	-fx-text-fill: #000000AA;
+	-fx-padding: 0 0 0 2;
+}
+.texto-frecuencia-alerta{
+	-fx-text-fill: #ddc72b;
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;
+	-fx-padding: 0 0 0 5;
+}
+/*Teo*/ 
+.panel-superior, .panel-inferior{
+	-fx-background-color: #9AACAC4D;
+	-fx-pref-height: 50px;
+}
+.paneles-pequenios-superior-e-inferior{
+	-fx-background-color: #9AACAC4D;
+}
+.botones-paneles-superior-e-inferior{
+	-fx-pref-height: 12px;
+	-fx-text-fill: color-principal;
+ 	-fx-font-size: 10px;
+ 	-fx-font-weight: 500;
+  	-fx-text-alignment: center;
+}
+.botones-menu-principal{
+	-fx-pref-height: 70px;
+  	-fx-text-fill: #9AACAC80; /* poner 66 para opacidad de 0.4, 80 para 0.5*/	
+  	-fx-font-size: 18px; 
+  	-fx-font-weight: 600;
+  	-fx-text-alignment: center;
+}
+.botones-secundarios-rellenos{
+	-fx-pref-height: 30px; 
+ 	-fx-text-fill: #FFF;
+  	-fx-font-size: 12px; 
+  	-fx-font-weight: 500;
+  	-fx-text-alignment: center;
+  	-fx-background-color: #9AACAC;
+}
+.botones-discretos-tipo-label {
+	-fx-font-size: 12px;
+	-fx-text-fill: #9AACAC;
+	-fx-underline:  true;
+}
+.titulo-graficas{
+	-fx-font-size: 20px;
+	-fx-font-weight: 600;
+  	-fx-text-fill: #9AACAC;
+  	-fx-alignment: center;
+}
+.axis {
+	-fx-tick-label-fill: #9AACAC;
+	-fx-tick-label-font-size: 11px;
+}
+.chart-title {
+	-fx-font-size: 20px;
+	-fx-font-weight: 600;
+  	-fx-text-fill: #9AACAC;
+  	-fx-alignment: center;
+}
+.axis .text{
+	-fx-fill: #9AACAC;
+	-fx-font-size: 13px;
+}
+.default-color0.chart-series-line { /* COLOR DEL VALOR MINIMO */
+	-fx-stroke: #ddc72b; 
+	-fx-stroke-width: 1px;
+}
+.default-color1.chart-series-line { /* COLOR DEL VALOR MAXIMO*/
+    -fx-stroke: #ddc72b;
+    -fx-stroke-width: 1px;
+}
+.default-color2.chart-series-line { /* COLOR DEL VALOR DEL SENSOR */
+    -fx-stroke: #9AACAC;
+    -fx-stroke-width: 3px;
+    -fx-effect: dropshadow( two-pass-box , rgba(0,0,0,0.3) , 8, 0.0 , 0 , 3 );
+}
+.default-color0.chart-line-symbol { /* SIMBOLO DEL VALOR MINIMO */
+    -fx-padding: 0px;
+}
+.default-color1.chart-line-symbol { /* SIMBOLO DEL VALOR MAXIMO */
+    -fx-padding: 0px;
+}
+.default-color2.chart-line-symbol { /* SIMBOLO DEL VALOR DEL SENSOR */
+    -fx-background-color: #9AACAC, white;
+    -fx-padding: 4px;
+}
+.jfx-button.botoncitos-icono:hover {
+	-fx-background-color:#9AACAC26;
+}
+.jfx-button.botones-menu-principal:hover {
+	-fx-text-fill:#9AACACCC;
+	-fx-background-color:#9AACAC26;
+}
+.jfx-button.botones-menu-principal:focused {
+	-fx-text-fill:#9AACAC;
+}
+.text-labels {
+	-fx-text-fill: color-principal;
+	-fx-font-size: 12px;
+	
+}
+.text-labels-alerta {
+	-fx-text-fill: #ddc72b;
+	-fx-font-size: 12px;
+}
+.text-labels-alerta-mismo-tamanio{
+	-fx-text-fill: #ddc72b;
+}
+.jfx-text-field.text-field {
+	-fx-prompt-text-fill: #9AACACE6; 
+	-fx-prompt-text-weight: 400;
+	-fx-text-fill: color-principal;
+	-jfx-focus-color: color-principal;
+	-jfx-unfocus-color: #9AACACE6;
+ 	-fx-font-size: 14px;
+}
+#textFieldBebe {
+	-fx-font-size: 12px;
+}
+#textFieldBebe:focused {
+    -jfx-focus-color: transparent;   
+}
+#textFieldBebe:focused-editable {
+    -jfx-focus-color: color-principal;   
+}
+.jfx-check-box.check-box{
+	-fx-text-fill: color-principal;
+	-fx-font-size: 12px;
+	-jfx-unchecked-color: color-principal;
+	-jfx-checked-color: color-principal;
+}
+.combo-box{
+	-fx-font-size: 12px;
+    -fx-text-fill: color-principal;
+    -fx-prompt-text-fill: color-principal;
+    -jfx-focus-color: color-principal;
+	-jfx-unfocus-color: color-principal;
+	
+}
+.combo-box .list-cell:filled:hover {
+	-fx-background-color: #9AACAC99;
+	-fx-text-fill: white;
+}
+.combo-box .list-cell:filled:selected {
+	-fx-background-color: #9AACACE6;
+	-fx-text-fill: white;
+}
+.combo-box .list-cell {
+	-fx-text-fill: color-principal;
+}
+.jfx-text-area {
+	-fx-prompt-text-fill: #9AACACE6; 
+	-fx-prompt-text-weight: 400;
+	-fx-text-fill: color-principal;
+	-jfx-focus-color: color-principal;
+	-jfx-unfocus-color: #9AACACE6;
+ 	-fx-font-size: 14px;
+}
+.texto-secundario-alerta{
+	-fx-text-fill: #ddc72b;
+	-fx-font-size: 16px;
+
+}
+.jfx-toggle-button {
+	-fx-text-fill: color-principal;
+	-fx-font-size: 14px;
+	-jfx-untoggle-color: white;
+	-jfx-untoggle-line-color: #9AACACE6;
+	-jfx-toggle-color: white;
+	-jfx-toggle-line-color: #ddc72bB3;
+}
+.jfx-toggle-button:selected {
+	-fx-text-fill: #ddc72b;
+}
+.date-picker {
+	-jfx-default-color: color-principal; 
+}
+.tooltip {
+	-fx-background-color: #9AACACD9; 
+}
+/*Fin de Teo */
+
+/*Añadir icono a los campos de la contraseña */
+.JFXPasswordField-icon {
+	
+	-fx-prompt-text-fill: #9AACACE6; 
+	-fx-prompt-text-weight: 400;
+	-fx-text-fill: color-principal;
+	-jfx-focus-color: color-principal;
+	-jfx-unfocus-color: #9AACACE6;
+	-fx-font-size: 14px;
+}
+
+
+
+

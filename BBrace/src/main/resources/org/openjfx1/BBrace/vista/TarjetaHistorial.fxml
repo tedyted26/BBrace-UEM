@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane fx:id="gridPane" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <Label fx:id="labelFecha" styleClass="texto-secundario" text="Fecha" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="labelHora" styleClass="texto-secundario" text="Hora" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label fx:id="labelDato" styleClass="texto-secundario" text="Dato" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="10.0" />
+      <ColumnConstraints percentWidth="30.0" />
+      <ColumnConstraints percentWidth="30.0" />
+      <ColumnConstraints percentWidth="20.0" />
+      <ColumnConstraints percentWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints percentHeight="80.0" />
+      <RowConstraints percentHeight="10.0" />
+   </rowConstraints>
+</GridPane>

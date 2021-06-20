@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="borderPaneParent" prefHeight="900.0" prefWidth="1440.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox fx:id="menuHSuperior" prefHeight="45.0" styleClass="panel-superior" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <BorderPane fx:id="borderPanePadres" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <top>
+            <HBox fx:id="menuHPrincipalPadres" prefHeight="70.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="hBoxLogo" alignment="CENTER" HBox.hgrow="NEVER">
+                     <children>
+                        <ImageView fx:id="imageViewLogo" fitHeight="50.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@bbrace.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hboxBotones" alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXButton id="sobreNosotros" fx:id="botonSobreNosotros" onAction="#cambiarVista" prefHeight="70.0" styleClass="botones-menu-principal" text="SOBRE NOSOTROS" HBox.hgrow="ALWAYS" />
+                        <JFXButton fx:id="botonLogin" onAction="#cambiarVista" prefHeight="70.0" styleClass="botones-menu-principal" text="LOGIN" HBox.hgrow="ALWAYS" />
+                        <JFXButton fx:id="botonRegistro" alignment="CENTER" onAction="#cambiarVista" prefHeight="70.0" styleClass="botones-menu-principal" text="REGISTRO" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="40.0" right="40.0" />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <center>
+            <StackPane fx:id="stackPanePadre" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="borderPaneSobreNosotros" visible="false" />
+                  <BorderPane fx:id="borderPaneLogin" />
+                  <BorderPane fx:id="borderPaneRegistro" />
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox fx:id="menuHInferior" alignment="CENTER" prefHeight="40.0" styleClass="panel-inferior" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <JFXButton fx:id="botonPolitica" onAction="#descargaPolitica" styleClass="botones-paneles-superior-e-inferior" text="Política de privacidad" />
+            <JFXButton fx:id="botonTerminos" onAction="#descargaTerminos" styleClass="botones-paneles-superior-e-inferior" text="Términos y condiciones">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

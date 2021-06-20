@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPaneParent" prefHeight="900.0" prefWidth="1440.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox fx:id="menuHSuperior" alignment="CENTER_RIGHT" prefHeight="45.0" styleClass="panel-superior" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Label fx:id="labelNombreUsuario" styleClass="text-labels" text="#NombreUsuario (Tipo)">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane fx:id="borderPaneGestor" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <top>
+            <HBox fx:id="menuHPrincipalPadres" prefHeight="70.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="hBoxLogo" alignment="CENTER_LEFT" HBox.hgrow="NEVER">
+                     <children>
+                        <ImageView fx:id="imageViewLogo" fitHeight="50.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@bbrace.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxBotones" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXButton fx:id="botonDatos" onAction="#cambiarVista" prefHeight="70.0" styleClass="botones-menu-principal" text="DATOS DE USUARIOS" />
+                        <JFXButton fx:id="botonRegistrarSanitario" onAction="#cambiarVista" prefHeight="70.0" styleClass="botones-menu-principal" text="REGISTRAR SANITARIO" />
+                        <JFXButton fx:id="botonLogOut" onAction="#logout" prefHeight="70.0" styleClass="botones-menu-principal" text="LOG OUT">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <StackPane fx:id="stackPanePadre" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="borderPaneGestion" visible="false" />
+                  <StackPane fx:id="stackPaneDatos">
+                     <children>
+                        <GridPane fx:id="gridPaneDatos" visible="false">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints percentHeight="45.0" vgrow="SOMETIMES" />
+                            <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints percentHeight="45.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox fx:id="vBoxBotonesInicio" alignment="CENTER" spacing="7.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <children>
+                                    <JFXButton fx:id="botonDatosSanitario" onAction="#cambiarADatos" styleClass="botones-secundarios-rellenos" text="VISUALIZAR DATOS DE SANITARIOS" />
+                                    <JFXButton fx:id="botonDatosPaciente" onAction="#cambiarADatos" styleClass="botones-secundarios-rellenos" text=" VISUALIZAR DATOS DE PACIENTES " />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPaneDatosPaciente" visible="false">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="35.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="80.0" vgrow="SOMETIMES" />
+                            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" percentHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="botonAtrasPaciente" onAction="#irAtras" styleClass="botones-secundarios-rellenos" text="ATRÁS" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+                              <JFXButton fx:id="botonVerBebes" onAction="#verBebes" styleClass="botones-secundarios-rellenos" text="VER DATOS DE BEBÉS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPaneDatosSanitario">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="35.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="65.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="7.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="botonAtrasSanitario" onAction="#irAtras" styleClass="botones-secundarios-rellenos" text="ATRÁS" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+                              <JFXButton fx:id="botonCambiarListas" onAction="#cambiarListas" styleClass="botones-secundarios-rellenos" text="VER ENFERMEROS ASOCIADOS" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPaneDatosBebes">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="90.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints percentHeight="5.0" vgrow="SOMETIMES" />
+                              <RowConstraints percentHeight="95.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="botonAtrasBebe" onAction="#irAtras" styleClass="botones-discretos-tipo-label" text="Volver a lista de padres" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                                 <padding>
+                                    <Insets bottom="4.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets left="55.0" />
+                                 </GridPane.margin></JFXButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox fx:id="menuHInferior" alignment="CENTER" prefHeight="40.0" styleClass="panel-inferior" BorderPane.alignment="CENTER">
+         <children>
+              <JFXButton fx:id="botonPolitica" onAction="#descargaPolitica" styleClass="botones-paneles-superior-e-inferior" text="Política de privacidad">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="botonTerminos" onAction="#descargaTerminos" styleClass="botones-paneles-superior-e-inferior" text="Términos y condiciones">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
